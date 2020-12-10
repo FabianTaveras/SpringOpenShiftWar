@@ -1,3 +1,3 @@
 com\mycompany\Application.class
-com\mycompany\ControllerViews.class
+com\mycompany\controller\ControllerViews.class
 com\collectionWeb\pageUtil\PageItem.class
