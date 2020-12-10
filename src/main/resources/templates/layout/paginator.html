@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    
+    <head th:fragment="head">
+        <title th:text="${titulo}"></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+        <script th:src="@{/js/bootstrap.min.js}"></script>
+        <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+    </head>
+    
+    <body>
+        <nav th:fragment="paginator_page">
+            <ul class="pagination">
+                <li class="page-item">
+                    <span class="page-link" th:if="${page.first}">primera</span>
+                    <a class="page-link" th:if="${not page.first}" th:href="@{${page.url}(page = 0)}">ir primera</a>
+                </li>
+                <li class="page-item">
+                    <span class="page-link" th:if="${not page.previous}">anterior</span>
+                    <a class="page-link" th:if="${page.previous}" th:href="@{${page.url}(page = ${page.paginaActual-2})}">anterior</a>
+                </li>
+                <li th:each="pagina : ${page.itemsPage}" class="page-item">
+                    <span class="page-link" th:if="${pagina.actual}" th:text="${pagina.numero}"></span>
+                    <a class="page-link" th:if="${not pagina.actual}" th:href="@{${page.url}(page = ${pagina.numero-1})}" th:text="${pagina.numero}"></a>
+                </li>
+                <li class="page-item">
+                    <span class="page-link" th:if="${not page.next}">siguiente</span>
+                    <a class="page-link" th:if="${page.next}" th:href="@{${page.url}(page = ${page.paginaActual})}">siguiente</a>
+                </li>
+                <li class="page-item">
+                    <span class="page-link" th:if="${page.last}">ultima</span>
+                    <a class="page-link" th:if="${not page.last}" th:href="@{${page.url}(page = ${page.totalPaginas-1})}">ir ultima</a>
+                </li> 
+            </ul>
+        </nav>
+    </body>
+</html>

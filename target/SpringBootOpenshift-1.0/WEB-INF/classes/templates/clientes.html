@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/layout_template :: head">
+    
+    </head>
+    <body>
+        <header th:replace="layout/layout_template :: header">
+            
+        </header>
+        
+        <div class="container">
+            <h3 class="border border-success border-top-0 border-left-0 border-right-0">Lista</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO</th>
+                        <th>EMAIL</th>
+                        <th>FECHA</th>
+                        <th>EDITAR</th>
+                        <th>ELIMINAR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cli: ${cliente}">
+                        <td th:text="${cli.id}"></td>
+                        <td th:text="${cli.nombre}"></td>
+                        <td th:text="${cli.apellido}"></td>
+                        <td th:text="${cli.email}"></td>
+                        <td th:text="${cli.create}"></td>
+                        <td><a class="btn btn-primary btn-xs" th:href="@{/formClient/} + ${cli.id}">editar</a></td>
+                        <td><a class="btn btn-danger btn-xs" th:href="@{/eliminar/} + ${cli.id}" onclick="return confirm('Esta seguro que desee eliminar?')">eliminar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <nav th:replace="layout/paginator :: paginator_page"></nav>
+        </div>
+    </body>
+    
+    <footer th:replace="layout/layout_template :: footer"> 
+        
+    </footer>
+</html>
