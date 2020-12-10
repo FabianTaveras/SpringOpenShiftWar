@@ -27,7 +27,7 @@ public class ControllerViews {
     @Qualifier("clienteService")
     private ClienteImplentService clienteService;
 
-    @RequestMapping(value = "lista")//, method = RequestMethod.GET)
+    @RequestMapping("lista")//, method = RequestMethod.GET)
     public String listaClientes() {
         
 //        Pageable pageable = PageRequest.of(page,3);
