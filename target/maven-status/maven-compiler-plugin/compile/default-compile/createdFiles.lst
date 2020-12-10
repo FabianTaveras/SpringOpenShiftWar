@@ -1,3 +1,8 @@
+com\mycompany\services\ClienteImplentService.class
+com\mycompany\model\entity\Cliente.class
 com\mycompany\Application.class
+com\mycompany\model\dao\IClienteDao.class
 com\mycompany\controller\ControllerViews.class
-com\collectionWeb\pageUtil\PageItem.class
+com\mycompany\pageUtil\PageUtil.class
+com\mycompany\pageUtil\PageItem.class
+com\mycompany\services\IClienteService.class
