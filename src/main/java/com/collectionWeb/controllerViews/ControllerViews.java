@@ -27,15 +27,15 @@ public class ControllerViews {
     @Qualifier("clienteService")
     private ClienteImplentService clienteService;
 
-    @RequestMapping(value = "lista", method = RequestMethod.GET)
-    public String listaClientes(@RequestParam(name="page", defaultValue = "0") int page, Model model) {
+    @RequestMapping(value = "lista")//, method = RequestMethod.GET)
+    public String listaClientes() {
         
-        Pageable pageable = PageRequest.of(page,3);
-        Page<Cliente> clientePage = clienteService.findAll(pageable);
-        PageUtil<Cliente> pageUtil = new PageUtil<>("/lista",clientePage);
-        model.addAttribute("titulo", "Lista Clientes");
-        model.addAttribute("cliente", clientePage/*clienteService.findAll()*/);
-        model.addAttribute("page", pageUtil);
+//        Pageable pageable = PageRequest.of(page,3);
+//        Page<Cliente> clientePage = clienteService.findAll(pageable);
+//        PageUtil<Cliente> pageUtil = new PageUtil<>("/lista",clientePage);
+//        model.addAttribute("titulo", "Lista Clientes");
+//        model.addAttribute("cliente", clientePage/*clienteService.findAll()*/);
+//        model.addAttribute("page", pageUtil);
         return "clientes";
     }
 }
