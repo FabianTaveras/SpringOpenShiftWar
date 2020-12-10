@@ -1,14 +1,14 @@
 package com.mycompany.springbootopenshift.resources;
 
-import com.collectionWeb.model.entity.Cliente;
-import com.collectionWeb.pageUtil.PageUtil;
-import com.collectionWeb.services.ClienteImplentService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.ui.Model;
+//import com.collectionWeb.model.entity.Cliente;
+//import com.collectionWeb.pageUtil.PageUtil;
+//import com.collectionWeb.services.ClienteImplentService;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Qualifier;
+//import org.springframework.data.domain.Page;
+//import org.springframework.data.domain.PageRequest;
+//import org.springframework.data.domain.Pageable;
+//import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,10 +22,7 @@ public class ControllerViews {
 //    public String sayHello(){
 //        return ("Hello, SpringBoot on Wildfly");
 //    }
-    
-    @Autowired
-    @Qualifier("clienteService")
-    private ClienteImplentService clienteService;
+
 
     @RequestMapping("lista")//, method = RequestMethod.GET)
     public String listaClientes() {

@@ -1,8 +1,3 @@
-com\collectionWeb\model\dao\IClienteDao.class
-com\collectionWeb\model\entity\Cliente.class
 com\mycompany\springbootopenshift\resources\ControllerViews.class
-com\collectionWeb\services\IClienteService.class
-com\collectionWeb\services\ClienteImplentService.class
 com\mycompany\springbootopenshift\resources\Application.class
 com\collectionWeb\pageUtil\PageItem.class
-com\collectionWeb\pageUtil\PageUtil.class
