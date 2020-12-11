@@ -33,6 +33,6 @@ public class ControllerViews {
 //        model.addAttribute("titulo", "Lista Clientes");
 //        model.addAttribute("cliente", clientePage/*clienteService.findAll()*/);
 //        model.addAttribute("page", pageUtil);
-        return ("clientes x13");
+        return ("clientes x13.12");
     }
 }
